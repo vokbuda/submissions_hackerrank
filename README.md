@@ -1,7 +1,7 @@
 # submissions_hackerrank
 Tool for hackerrank submissions(includes also creation of python file with all solutions) - for ADM
 
-before start u should have **Python** and **Chrome** on your pc
+before start u should have **Python** and **Chrome** on your pc(I tested only on **Windows**)
 ## Execute the following instructions<br/> 
 
 - in command line ```pip install selenium webdriver-manager PyPDF2 pyperclip```<br/><br/>
