@@ -10,6 +10,9 @@ before start u should have **Python** and **Chrome** on your pc
 - ```python start.py```<br/><br/>
 - after all u will see the following screen
 ![image](https://github.com/user-attachments/assets/d7aec1bc-1830-4900-ab15-6a147983175b)
+- insert number of pages on hackerrank which u need to submit, in my case i have 20, but need only 15 so insert 15<br/><br/>
+![image](https://github.com/user-attachments/assets/c8b7033d-4dea-4f41-ab62-aa508e0b7647)
+
 - after that it will ask u about your username and password of hackerrank, <br/><br/>
 - insert credentials(Pay attention if u insert your credentials correctly,  ```python start.py```),<br/><br/>
 don't worry, because u can actually check my code i won't send these credentials anywhere<br/>
