@@ -8,15 +8,14 @@ before start u should have **Python** and **Chrome** on your pc
 <br/>
 <br/>
 - ```python start.py```<br/><br/>
-- after all u will see the following screen<br/><br/>
+- After completing all steps, you will see the following screen:<br/><br/>
 ![image](https://github.com/user-attachments/assets/d7aec1bc-1830-4900-ab15-6a147983175b)
-- insert number of pages on hackerrank which u need to submit, in my case i have 20, but need only 15 so insert 15<br/><br/>
+- Insert the number of pages from HackerRank that you need to submit. In my case, I have 20 pages, but I only need to submit 15, so I will enter 15<br/><br/>
 ![image](https://github.com/user-attachments/assets/c8b7033d-4dea-4f41-ab62-aa508e0b7647)
 <br/><br/>
-- after that it will ask u about your username and password of hackerrank, <br/><br/>
-- insert credentials(Pay attention if u insert your credentials correctly,  ```python start.py```),<br/><br/>
-don't worry, because u can actually check my code i won't send these credentials anywhere<br/>
-after all these steps program starts working(it takes nearly 23 minutes on my laptop with 16gb ram, processor intel i7)
-don't close chrome window during this operation, also u can do everything u need during this operation</br></br>
-- after all u will see file scripts.py and merged_output.py in the same directory as start.py
+- After that, the program will ask for your HackerRank **username** and **password**. <br/><br/>
+- Enter your credentials (make sure you input them correctly), then run  ```python start.py```),<br/><br/>
+Don’t worry about your credentials; you can check my code, and I won't send them anywhere.<br/>
+Once these steps are done, the program will start working (it takes approximately 23 minutes on my laptop with 16GB RAM and an Intel i7 processor). Do not close the Chrome window during this operation. You can continue using your computer for other tasks while the program runs.</br></br>
+- After the process is complete, you will find the files scripts.py and merged_output.py in the same directory as start.py
 
