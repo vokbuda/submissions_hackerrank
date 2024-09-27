@@ -3,9 +3,9 @@ Tool for hackerrank submissions(includes also creation of python file with all s
 
 before start u should have Python and Chrome on your pc
 and execute the following line of code
-pip install selenium webdriver-manager PyPDF2 pyperclip
+```pip install selenium webdriver-manager PyPDF2 pyperclip```
 after launch it with a command below
-python start.py
+```python start.py```
 after all u will see the following screen
 ![image](https://github.com/user-attachments/assets/d7aec1bc-1830-4900-ab15-6a147983175b)
 after that it will ask u about your username and password of hackerrank, insert credentials(Pay attention if u insert your credentials correctly,
