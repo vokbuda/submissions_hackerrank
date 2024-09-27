@@ -4,9 +4,7 @@ Tool for hackerrank submissions(includes also creation of python file with all s
 before start u should have **Python** and **Chrome** on your pc
 ## Execute the following instructions<br/> 
 
-- in command line ```pip install selenium webdriver-manager PyPDF2 pyperclip```
-<br/>
-<br/>
+- in command line ```pip install selenium webdriver-manager PyPDF2 pyperclip```<br/><br/>
 - in command line ```python start.py```<br/><br/>
 - After completing all steps, you will see the following screen:<br/><br/>
 ![image](https://github.com/user-attachments/assets/d7aec1bc-1830-4900-ab15-6a147983175b)
