@@ -14,8 +14,8 @@ before start u should have **Python** and **Chrome** on your pc
 ![image](https://github.com/user-attachments/assets/c8b7033d-4dea-4f41-ab62-aa508e0b7647)
 <br/><br/>
 - After that, the program will ask for your HackerRank **username** and **password**. <br/><br/>
-- Enter your credentials (make sure you input them correctly), then run  ```python start.py```),<br/><br/>
+- Enter your **credentials** (make sure you input them correctly), then run  ```python start.py```),<br/><br/>
 Don’t worry about your credentials; you can check my code, and I won't send them anywhere.<br/>
-Once these steps are done, the program will start working (it takes approximately 23 minutes on my laptop with 16GB RAM and an Intel i7 processor). Do not close the Chrome window during this operation. You can continue using your computer for other tasks while the program runs.</br></br>
+Once these steps are done, the program will start working (it takes approximately **23 minutes** on my laptop with 16GB RAM and an Intel i7 processor). Do not close the Chrome window during this operation. You can continue using your computer for other tasks while the program runs.</br></br>
 - After the process is complete, you will find the files scripts.py and merged_output.py in the same directory as start.py
 
