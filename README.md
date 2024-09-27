@@ -15,8 +15,8 @@ before start u should have **Python** and **Chrome** on your pc
 - Enter your **credentials** (make sure you input them correctly), then run  ```python start.py```),<br/><br/>
 $${\color{green}Don’t\space worry\space about\space your\space credentials;you\space can\space check\space my\space code, and\space I\space won't\space send\space them\space anywhere.}$$
 
-<br/>
-Once these steps are done, the program will start working (it takes approximately **23 minutes** on my laptop with 16GB RAM and an Intel i7 processor). Do not close the Chrome window during this operation. You can continue using your computer for other tasks while the program runs.</br></br>
-## Finish<br/>
--After the process is complete last two lines in prompt are about merged files and elapsed time, you will find the files scripts.py and merged_output.py in the same directory as start.py
+<br/></br>
+- Once these steps are done, the program will start working (it takes approximately **23 minutes** on my laptop with 16GB RAM and an Intel i7 processor). Do not close the Chrome window during this operation. You can continue using your computer for other tasks while the program runs.</br></br>
+
+- After the process is complete last two lines in prompt are about merged files and elapsed time, you will find the files scripts.py and merged_output.py in the same directory as start.py
 
