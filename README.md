@@ -12,7 +12,7 @@ before start u should have **Python** and **Chrome** on your pc
 ![image](https://github.com/user-attachments/assets/c8b7033d-4dea-4f41-ab62-aa508e0b7647)
 <br/><br/>
 - After that, the program will ask for your HackerRank **username** and **password**. <br/><br/>
-- Enter your **credentials** (make sure you input them correctly), then run  ```python start.py```),<br/><br/>
+- Enter your **credentials** (make sure you input them correctly, otherwise close everything and run  ```python start.py``` the second time),<br/><br/>
 $${\color{green}Don’t\space worry\space about\space your\space credentials;you\space can\space check\space my\space code, and\space I\space won't\space send\space them\space anywhere.}$$
 
 <br/></br>
