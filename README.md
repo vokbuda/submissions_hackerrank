@@ -7,7 +7,7 @@ before start u should have **Python** and **Chrome** on your pc
 -```pip install selenium webdriver-manager PyPDF2 pyperclip```
 <br/>
 <br/>
-- ```python start.py```<br/><br/>
+- in command line ```python start.py```<br/><br/>
 - After completing all steps, you will see the following screen:<br/><br/>
 ![image](https://github.com/user-attachments/assets/d7aec1bc-1830-4900-ab15-6a147983175b)
 - Insert the **number of pages** from HackerRank that you need to submit. In my case, I have _20 pages_, but I only need to submit _15_, so I will enter _15_<br/><br/>
