@@ -8,7 +8,7 @@ before start u should have **Python** and **Chrome** on your pc
 <br/>
 <br/>
 - ```python start.py```<br/><br/>
-- after all u will see the following screen
+- after all u will see the following screen<br/><br/>
 ![image](https://github.com/user-attachments/assets/d7aec1bc-1830-4900-ab15-6a147983175b)
 - insert number of pages on hackerrank which u need to submit, in my case i have 20, but need only 15 so insert 15<br/><br/>
 ![image](https://github.com/user-attachments/assets/c8b7033d-4dea-4f41-ab62-aa508e0b7647)
