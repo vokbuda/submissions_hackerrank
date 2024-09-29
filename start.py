@@ -11,13 +11,42 @@ from PyPDF2 import PdfMerger
 import getpass
 import pyperclip
 from selenium.webdriver.common.keys import Keys
+import glob
 
 
 
 start_time = time.time()
-print("Welcome to Pdf Extractor for HackerRank Submissions")
-print("Tool created by https://github.com/vokbuda")
-print("Source code u can find also here https://github.com/vokbuda/submissions_hackerrank")
+print("*****************************************************************************************")
+print("*****************************************************************************************")
+print("*************                                                               *************")
+print("*************       Welcome to Pdf Extractor for HackerRank Submissions     *************")
+print("*************                    Tool created by                            *************")
+print("*************                https://github.com/vokbuda                     *************")
+print("*************                                                               *************")
+print("*****************************************************************************************")
+print("*****************************************************************************************")
+import os
+import glob
+
+# Get the current working directory
+current_directory = os.getcwd()
+
+# Find all files in the current directory starting with 'Submissions_Hackerrank'
+files_to_remove = glob.glob(os.path.join(current_directory, 'Submissions_Hackerrank*'))
+if os.path.exists('merged_output.pdf'):
+    os.remove('merged_output.pdf')
+if os.path.exists('scripts.py'):
+    os.remove('scripts.py')
+
+# Loop through and remove each file
+for file in files_to_remove:
+    try:
+        os.remove(file)
+        print(f"Removed: {file}")
+    except FileNotFoundError:
+        print(f"File not found: {file}")
+    except Exception as e:
+        print(f"Error occurred while removing {file}: {e}")
 
 
 while True:
@@ -38,6 +67,7 @@ chrome_options = Options()
 chrome_options.add_argument('--kiosk-printing')  # Enable silent printing
 chrome_options.add_argument("--log-level=3")  # Set log level to severe
 chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
+chrome_options.addArguments("disable-infobars");
 prefs = {
     "printing.print_preview_sticky_settings.appState": '{"recentDestinations":[{"id":"Save as PDF","origin":"local","account":""}],"selectedDestinationId":"Save as PDF","version":2}',
     "savefile.default_directory": current_directory  # Set the save directory to the current working directory
@@ -92,7 +122,7 @@ else:
 # DevTools commands are accessed via driver.execute_cdp_cmd() in Selenium
 current_idx=1
 main_dict=dict()
-for i in range(0,100):
+for i in range(0,number_of_pages_hacker_rank):
     current_url='https://www.hackerrank.com/submissions/all/'+str(i+1)
     driver.get(current_url)
     data_field = driver.find_element(By.XPATH, "//tbody[@role='rowgroup']")
