@@ -1,5 +1,5 @@
 # submissions_hackerrank
-Tool for hackerrank submissions(includes also creation of python file with all solutions) - for ADM
+Tool for hackerrank submissions(includes also creation of python file with all solutions) - ADM
 
 before start u should have **Python** and **Chrome** on your pc(I tested only on **Windows**)
 ## Execute the following instructions<br/> 
