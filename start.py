@@ -67,7 +67,7 @@ chrome_options = Options()
 chrome_options.add_argument('--kiosk-printing')  # Enable silent printing
 chrome_options.add_argument("--log-level=3")  # Set log level to severe
 chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
-chrome_options.addArguments("disable-infobars");
+
 prefs = {
     "printing.print_preview_sticky_settings.appState": '{"recentDestinations":[{"id":"Save as PDF","origin":"local","account":""}],"selectedDestinationId":"Save as PDF","version":2}',
     "savefile.default_directory": current_directory  # Set the save directory to the current working directory
