@@ -5,7 +5,7 @@ before start u should have **Python** and **Chrome** on your pc(I tested only on
 ## Execute the following instructions<br/> 
 
 - in command line ```pip install selenium webdriver-manager PyPDF2 pyperclip```<br/><br/>
-- in command line ```python start.py```<br/><br/>
+- Position in folder where you put _start.py_ in command line ```python start.py```<br/><br/>
 - After completing all steps, you will see the following screen:<br/><br/>
 ![image](https://github.com/user-attachments/assets/044aba67-dbc3-41c1-9191-eaa0a2938903)
 
