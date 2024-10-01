@@ -122,7 +122,7 @@ else:
 # DevTools commands are accessed via driver.execute_cdp_cmd() in Selenium
 current_idx=1
 main_dict=dict()
-for i in range(0,number_of_pages_hacker_rank):
+for i in range(number_of_pages_hacker_rank-1,-1,-1):
     current_url='https://www.hackerrank.com/submissions/all/'+str(i+1)
     driver.get(current_url)
     data_field = driver.find_element(By.XPATH, "//tbody[@role='rowgroup']")
@@ -180,9 +180,11 @@ for i in range(0,number_of_pages_hacker_rank):
 
                     # Get the copied content from the clipboard using pyperclip
                     copied_text = pyperclip.paste()
+                    # Clean up extra newlines
+                    cleaned_text = copied_text.replace('\r\n', '\n').replace('\n\n', '\n')
                     with open("scripts.py", "a") as file:
-                        file.write('# '+exname.text+'\n')
-                        file.write(copied_text)
+                        file.write('# '+exname.text)
+                        file.write(cleaned_text)
                         print(exname.text + 'had been saved to scripts.py')
                     break
                 driver.get(current_url)
