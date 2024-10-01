@@ -134,11 +134,11 @@ for i in range(number_of_pages_hacker_rank-1,-1,-1):
     #row_indicated = driver.find_element(By.XPATH, "//tbody[@role='row']")
     rows = driver.find_elements(By.XPATH, "//tbody[@role='rowgroup']/tr[@role='row']")#
     #child_elements= data_field.find_elements(By.XPATH, "./tr[@role='row']")
-    s_idx=0
-    for row in rows:
+    s_idx=len(rows)-1
+    for row in reversed(rows):
         
         row = driver.find_elements(By.XPATH, "//tbody[@role='rowgroup']/tr[@role='row']")[s_idx]
-        s_idx+=1
+        s_idx-=1
         #row=child.find_element(By.XPATH, "//tbody[@role='rowgroup']/tr[@role='row']")
         # Perform actions on each row
         # Find the 5th column in the current row
@@ -147,7 +147,7 @@ for i in range(number_of_pages_hacker_rank-1,-1,-1):
         
         a_property = a_element.get_attribute('href')
         columns = row.find_elements(By.TAG_NAME, 'td')
-        if len(columns) >= 5:
+        if len(columns) >= 5 and columns[1].text.strip().lower() == 'python3':
             fifth_column = columns[4]
             if a_property not in main_dict:
                 main_dict[a_property]=float(fifth_column.text)
@@ -176,7 +176,6 @@ for i in range(number_of_pages_hacker_rank-1,-1,-1):
 
                     # Wait a second to ensure the clipboard has the content
                     
-                    
 
                     # Get the copied content from the clipboard using pyperclip
                     copied_text = pyperclip.paste()
@@ -185,7 +184,9 @@ for i in range(number_of_pages_hacker_rank-1,-1,-1):
                     with open("scripts.py", "a") as file:
                         file.write('# '+exname.text)
                         file.write(cleaned_text)
-                        print(exname.text + 'had been saved to scripts.py')
+                        file.write("\n")
+                        
+                        print(exname.text + ' had been saved to scripts.py')
                     break
                 driver.get(current_url)
                 time.sleep(0.5)
