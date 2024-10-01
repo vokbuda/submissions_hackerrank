@@ -182,7 +182,7 @@ for i in range(number_of_pages_hacker_rank-1,-1,-1):
                     # Clean up extra newlines
                     cleaned_text = copied_text.replace('\r\n', '\n').replace('\n\n', '\n')
                     with open("scripts.py", "a") as file:
-                        file.write('# '+exname.text)
+                        file.write('# '+exname.text + '\n')
                         file.write(cleaned_text)
                         file.write("\n")
                         
