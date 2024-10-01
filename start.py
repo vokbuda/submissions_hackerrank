@@ -147,7 +147,7 @@ for i in range(number_of_pages_hacker_rank-1,-1,-1):
         
         a_property = a_element.get_attribute('href')
         columns = row.find_elements(By.TAG_NAME, 'td')
-        if len(columns) >= 5 and columns[1].text.strip().lower() == 'python3':
+        if len(columns) >= 5 and (columns[1].text.strip().lower() == 'python3' or columns[1].text.strip().lower() == 'pypy3'):
             fifth_column = columns[4]
             if a_property not in main_dict:
                 main_dict[a_property]=float(fifth_column.text)
