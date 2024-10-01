@@ -3,7 +3,7 @@ Tool for hackerrank submissions(includes also creation of python file with all s
 
 before start u should have **Python** and **Chrome** on your pc(I tested only on **Windows**)
 ## Recent Updates
-- **[01/10/2024]**: Added only support of exercises for **Python/PyPy3**, thanks to [@LinCanNerd](https://github.com/LinCanNerd)
+- **[01/10/2024]**: Added only support of exercises **Python/PyPy3**, thanks to [@LinCanNerd](https://github.com/LinCanNerd)
 
 
 ## Execute the following instructions<br/> 
