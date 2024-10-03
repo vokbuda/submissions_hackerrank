@@ -1,5 +1,5 @@
 # submissions_hackerrank
-Tool for hackerrank submissions which creates a PDF with submissions<br>(includes also creation of python file with all solutions) - ADM
+Tool for hackerrank submissions which creates a PDF with submitted solutions<br>(includes also creation of python file with all solutions) - ADM
 
 before start you should have **Python** and **Chrome** installed on pc(I tested only on **Windows**)
 ## Recent Updates
