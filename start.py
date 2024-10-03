@@ -12,6 +12,7 @@ import getpass
 import pyperclip
 from selenium.webdriver.common.keys import Keys
 import glob
+import nbformat as nbf
 
 
 
@@ -28,6 +29,9 @@ print("*************************************************************************
 import os
 import glob
 
+# Initialize the notebook
+nb = nbf.v4.new_notebook()
+
 # Get the current working directory
 current_directory = os.getcwd()
 
@@ -37,6 +41,8 @@ if os.path.exists('merged_output.pdf'):
     os.remove('merged_output.pdf')
 if os.path.exists('scripts.py'):
     os.remove('scripts.py')
+if os.path.exists('scripts.ipynb'):
+    os.remove('scripts.ipynb')
 
 # Loop through and remove each file
 for file in files_to_remove:
@@ -122,6 +128,7 @@ else:
 # DevTools commands are accessed via driver.execute_cdp_cmd() in Selenium
 current_idx=1
 main_dict=dict()
+
 for i in range(number_of_pages_hacker_rank-1,-1,-1):
     current_url='https://www.hackerrank.com/submissions/all/'+str(i+1)
     driver.get(current_url)
@@ -187,6 +194,16 @@ for i in range(number_of_pages_hacker_rank-1,-1,-1):
                         file.write("\n")
                         
                         print(exname.text + ' had been saved to scripts.py')
+
+                     # Add the task name as a markdown cell
+                    nb.cells.append(nbf.v4.new_markdown_cell(f"# {exname.text}"))
+                    # Add the code as a code cell
+                    nb.cells.append(nbf.v4.new_code_cell(cleaned_text))
+                    # Save to the notebook
+                    with open('scripts.ipynb', 'w') as f:
+                        nbf.write(nb, f)
+                    print(f"{exname.text} has been saved to scripts.ipynb.")
+                    
                     break
                 driver.get(current_url)
                 time.sleep(0.5)
@@ -239,4 +256,3 @@ end_time = time.time()
 # Calculate the elapsed time
 elapsed_time = end_time - start_time
 print(f"Elapsed time: {elapsed_time} seconds")
-
