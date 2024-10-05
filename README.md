@@ -19,9 +19,9 @@ It is recommended to create a dedicated folder for this purpose, as having other
 - Now the program will ask you if you want to save your submissions in a .py script, a .ipynb notebook or both. <br/><br/>
 - After that, the program will ask for your HackerRank **username** and **password**. <br/><br/>
 
-- If you signed in using Google or another service (e.g., Facebook, GitHub), you can retrieve your password by following the password recovery process using the email associated with your account.. <br/><br/>
+- If you signed in using Google or another service (e.g., Facebook, GitHub), you can retrieve your password by following the password recovery process using the email associated with your account. <br/><br/>
 
-- Enter your **credentials** (make sure you input them correctly, otherwise close everything and run  ```python start.py``` the second time),<br/><br/>
+- Enter your **credentials** (make sure you input them correctly, otherwise close everything and run  ```python start.py``` the second time). <br/><br/>
 $${\color{green}Don’t\space worry\space about\space your\space credentials;you\space can\space check\space my\space code, and\space I\space won't\space send\space them\space anywhere.}$$
 <br/></br>
 - Once these steps are done, the program will start working (it takes approximately **23 minutes** on my laptop with 16GB RAM and an Intel i7 processor). Do not close the Chrome window during this operation. You can continue using your computer for other tasks while the program runs, but please refrain from using the copy-paste functionality. Using copy-paste during this time may result in incorrect text being processed, as the program relies on the clipboard to manage content.</br></br>
