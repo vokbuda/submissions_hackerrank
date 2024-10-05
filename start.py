@@ -12,6 +12,8 @@ import getpass
 import pyperclip
 from selenium.webdriver.common.keys import Keys
 import glob
+import nbformat as nbf
+import inquirer
 
 
 
@@ -28,6 +30,9 @@ print("*************************************************************************
 import os
 import glob
 
+# Initialize the notebook
+nb = nbf.v4.new_notebook()
+
 # Get the current working directory
 current_directory = os.getcwd()
 
@@ -37,6 +42,8 @@ if os.path.exists('merged_output.pdf'):
     os.remove('merged_output.pdf')
 if os.path.exists('scripts.py'):
     os.remove('scripts.py')
+if os.path.exists('scripts.ipynb'):
+    os.remove('scripts.ipynb')
 
 # Loop through and remove each file
 for file in files_to_remove:
@@ -57,6 +64,23 @@ while True:
         break
     except ValueError as e:
         print(f"Invalid input: {e}. Please try again.")
+
+question = [
+        inquirer.List('option',
+                      message="Select the output format for saving your submissions: ", 
+                      choices=['.py script',
+                               '.ipynb notebook (every task in a separate cell)',
+                               ' both'],
+                      ),
+    ]
+answer = inquirer.prompt(question)
+output_mapping = {
+        '.py script': ('py', "Your submissions will be saved in a .py script."),
+        '.ipynb notebook (every task in a separate cell)': ('ipynb', "Your submissions will be saved in a .ipynb notebook."),
+        ' both': ('both', "Your submissions will be saved in both a .py script and a .ipynb notebook.")
+    }
+output_choice, message = output_mapping[answer['option']]
+print(message, "\n")
 
 username = input("Enter your username(hackerrank): \n")
 password = getpass.getpass("Insert your password(hackerrank): \n")
@@ -122,6 +146,7 @@ else:
 # DevTools commands are accessed via driver.execute_cdp_cmd() in Selenium
 current_idx=1
 main_dict=dict()
+
 for i in range(number_of_pages_hacker_rank-1,-1,-1):
     current_url='https://www.hackerrank.com/submissions/all/'+str(i+1)
     driver.get(current_url)
@@ -181,12 +206,24 @@ for i in range(number_of_pages_hacker_rank-1,-1,-1):
                     copied_text = pyperclip.paste()
                     # Clean up extra newlines
                     cleaned_text = copied_text.replace('\r\n', '\n').replace('\n\n', '\n')
-                    with open("scripts.py", "a") as file:
-                        file.write('# '+exname.text + '\n')
-                        file.write(cleaned_text)
-                        file.write("\n")
-                        
+
+                    if output_choice in {"py", "both"}:
+                        with open("scripts.py", "a") as file:
+                            file.write('# '+exname.text + '\n')
+                            file.write(cleaned_text)
+                            file.write("\n")                        
                         print(exname.text + ' had been saved to scripts.py')
+                    
+                    if output_choice in {"ipynb", "both"}:
+                        # Add the task name as a markdown cell
+                        nb.cells.append(nbf.v4.new_markdown_cell(f"# {exname.text}"))
+                        # Add the code as a code cell
+                        nb.cells.append(nbf.v4.new_code_cell(cleaned_text))
+                        # Save to the notebook
+                        with open('scripts.ipynb', 'w') as f:
+                            nbf.write(nb, f)
+                        print(f"{exname.text} has been saved to scripts.ipynb.")
+                    
                     break
                 driver.get(current_url)
                 time.sleep(0.5)
