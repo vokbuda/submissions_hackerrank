@@ -8,14 +8,15 @@ before start u should have **Python** and **Chrome** on your pc(I tested only on
 
 ## Execute the following instructions<br/> 
 
-- in command line ```pip install selenium webdriver-manager PyPDF2 pyperclip```<br/><br/>
+- in command line ```pip install selenium webdriver-manager PyPDF2 pyperclip nbformat inquirer```<br/><br/>
 - Position in folder where you put _start.py_ , then execute in command line ```python start.py```<br/><br/>
 - After completing all steps, you will see the following screen:<br/><br/>
 ![image](https://github.com/user-attachments/assets/044aba67-dbc3-41c1-9191-eaa0a2938903)
-
 - Insert the **number of pages** from HackerRank that you need to submit. In my case, I have _20 pages_, but I only need to submit _15_, so I will enter _15_<br/><br/>
 ![image](https://github.com/user-attachments/assets/c8b7033d-4dea-4f41-ab62-aa508e0b7647)
 <br/><br/>
+
+- Now the program will ask you if you want to save your submissions in a .py script, an .ipynb notebook or both. <br/><br/>
 - After that, the program will ask for your HackerRank **username** and **password**. <br/><br/>
 - Enter your **credentials** (make sure you input them correctly, otherwise close everything and run  ```python start.py``` the second time),<br/><br/>
 $${\color{green}Don’t\space worry\space about\space your\space credentials;you\space can\space check\space my\space code, and\space I\space won't\space send\space them\space anywhere.}$$
