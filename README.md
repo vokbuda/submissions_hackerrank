@@ -1,27 +1,120 @@
 # submissions_hackerrank
-Tool for hackerrank submissions which creates a PDF with submitted solutions<br>(includes also creation of python file with all solutions) - ADM
+Tool for hackerrank submissions which creates a PDF with submitted solutions<br>(includes also creation of python files with all solutions) - ADM
 
-before start you should have **Python** and **Chrome** installed on pc(I tested only on **Windows**)
+**Now with support for both Windows and macOS!**
+
+---
 ## Recent Updates
-- **[01/10/2024]**: Added only support of exercises **Python/PyPy3**, thanks to [@LinCanNerd](https://github.com/LinCanNerd)
+- **[10/2025]**: Added full support for **macOS**, including automatic sleep prevention. 
+
+---
+
+---
+## Prerequisites
+Before you start, make sure you have the following installed on your computer:
+* **Python 3**: If you don't have it, download it from [python.org](https://www.python.org/).
+* **Google Chrome**: The script uses Chrome to automate the process, so you'll need the browser installed.
 
 
-## Execute the following instructions<br/> 
+## Installation & Setup
 
-- in command line ```pip install selenium webdriver-manager PyPDF2 pyperclip```<br/><br/>
-- Position in folder where you put _start.py_ , then execute in command line ```python start.py```<br/><br/>
-- After completing all steps, you will see the following screen:<br/><br/>
-![image](https://github.com/user-attachments/assets/044aba67-dbc3-41c1-9191-eaa0a2938903)
+Follow these steps to get the tool ready to run.
 
-- Insert the **number of pages** from HackerRank that you need to submit. In my case, I have _20 pages_, but I only need to submit _15_, so I will enter _15_<br/><br/>
-![image](https://github.com/user-attachments/assets/c8b7033d-4dea-4f41-ab62-aa508e0b7647)
-<br/><br/>
-- After that, the program will ask for your HackerRank **username** and **password**. <br/><br/>
-- Enter your **credentials** (make sure you input them correctly, otherwise close everything and run  ```python start.py``` the second time),<br/><br/>
-$${\color{green}Don’t\space worry\space about\space your\space credentials;you\space can\space check\space my\space code, and\space I\space won't\space send\space them\space anywhere.}$$
+### Step 1: Get the Code
+Clone this repository or download the ZIP file and unzip it to a dedicated folder on your computer.
 
-<br/></br>
-- Once these steps are done, the program will start working (it takes approximately **23 minutes** on my laptop with 16GB RAM and an Intel i7 processor). Do not close the Chrome window during this operation. You can continue using your computer for other tasks while the program runs.</br></br>
+### Step 2: Create a Virtual Environment (Optional but Recommended)
+Using a virtual environment is the best way to manage project dependencies and avoid conflicts with other Python projects.
 
-- After the process is complete last two lines in prompt are about merged files and elapsed time, you will find the files _scripts.py_ and _merged_output.pdf_ in the same directory as _start.py_
+1.  **Open your terminal** (Command Prompt on Windows, Terminal on macOS) and navigate to the project folder.
+2.  **Create the environment** by running:
+    ```bash
+    python -m venv venv
+    ```
+3.  **Activate the environment**. This command is different for each OS:
 
+    <details>
+    <summary><b>► On Windows (Command Prompt)</b></summary>
+    
+    ```bash
+    venv\Scripts\activate
+    ```
+    </details>
+
+    <details>
+    <summary><b>► On macOS</b></summary>
+    
+    ```bash
+    source venv/bin/activate
+    ```
+    </details>
+
+    You'll know it's active when you see `(venv)` at the beginning of your terminal prompt.
+
+### Step 3: Install Required Libraries
+With your environment active, install all the necessary packages using the `requirements.txt` file:
+```bash
+pip install -r requirements.txt
+```
+
+
+---
+## How to Run the Script
+
+1.  Make sure your virtual environment is **active**.
+2.  Run the script from your terminal:
+    ```bash
+    python start.py
+    ```
+    *(Note: On macOS, you may need to use `python3 start.py`)*
+
+3.  Follow the on-screen prompts:
+    * First, enter the **number of submission pages** you want to scrape.
+      ![image](https://github.com/user-attachments/assets/c8b7033d-4dea-4f41-ab62-aa508e0b7647)
+    * Next, choose your desired **output format** (.py, .ipynb, or both).
+    * Finally, enter your HackerRank **username** and **password**.
+
+    > **What if I use Google/Facebook to log in?**
+    > If you use a social login, you can set a password for your HackerRank account by using the "Forgot Password" feature with the email associated with your social account.
+
+    **Your credentials are safe.** The script only uses them to log in to HackerRank and does not store or send them anywhere. You can review the code to verify this.
+
+
+---
+## Expected Output
+Once the script finishes, you will find the following files in your project folder:
+
+* **`merged_output.pdf`**: A single, consolidated PDF file containing screenshots of all your submission pages.
+
+* **`scripts.py`** *(Optional)*: A Python script containing all your scraped code solutions. Each solution is preceded by a comment with the problem's title, making it easy to search. This file is generated if you selected the `.py script` or `both` option.
+
+* **`scripts.ipynb`** *(Optional)*: A Jupyter Notebook for a more organized view of your solutions. Each problem is placed in its own section, with the title in a Markdown cell followed by the code in a code cell. This file is generated if you selected the `.ipynb notebook` or `both` option.
+
+---
+## Important Usage Notes
+
+* **Execution Time**: The script will take approximately **20 minutes** to complete. This is not due to hardware limitations but because of intentional delays added to prevent HackerRank from detecting and blocking the script as a bot.
+* **Do Not Use Your Computer**: It is highly recommended to let the script run without using your computer. The most critical point of failure is using the **copy-paste function** (`Ctrl+C`/`Cmd+C`), as the script relies on your system's clipboard to scrape the code.
+* **Sleep Prevention**:
+    * **macOS**: The script automatically calls `caffeinate` to prevent your Mac from sleeping during execution.
+    * **Windows**: You must **manually change your power settings** to prevent your PC from sleeping. Go to `Settings > System > Power & sleep` and set "Sleep" to "Never" while plugged in.
+
+---
+##  troubleshooting
+
+If you run into issues, check these common solutions.
+
+<details>
+<summary><b>► Windows Troubleshooting</b></summary>
+
+* **Problem:** The command `python` is not recognized.
+    * **Cause:** Python was not added to your system's PATH during installation.
+    * **Solution:** The easiest fix is to **reinstall Python**. Run the official installer again and make sure to check the box at the bottom that says **"Add python.exe to PATH"**.
+
+* **Problem:** When activating the environment in PowerShell, you get a red error message about `Execution Policies`.
+    * **Cause:** PowerShell has a security feature that blocks scripts from running by default.
+    * **Solution:** You can either **use Command Prompt (`cmd`)** instead, or run the following command in PowerShell to allow scripts for your current session only (it's safe and resets when you close the window):
+        ```powershell
+        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+        ```
+</details>
